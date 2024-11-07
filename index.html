@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Knovon.net - A Knovon Company">
+    <meta name="theme-color" content="#000000">
+    <meta property="og:title" content="Knovon.net - A Knovon Company">
+    <meta property="og:description" content="Discover the simplicity of Knovon.net. A Knovon company.">
+    <meta property="og:image" content="https://mytab.knovon.net/knovontablogo.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="https://mytab.knovon.net/knovontablogo.png">
+    <title>Knovon.net - A Knovon Company</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background-color: #111; /* Dark background for modern look */
+            color: #ffffff;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+            animation: fadeIn 1.5s ease;
+        }
+
+        .logo {
+            width: 40%;
+            max-width: 300px;
+            opacity: 0.8; /* Slight transparency */
+        }
+
+        h1, p {
+            opacity: 0.9;
+            color: #ffffff;
+            transition: opacity 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://mytab.knovon.net/knovontablogo.png" alt="Knovon Logo" class="logo">
+        <h1>Knovon.net</h1>
+        <p>A Knovon Company</p>
+    </div>
+    <script>
+        document.addEventListener("mousemove", (e) => {
+            const { innerWidth, innerHeight } = window;
+            const xPercent = (e.clientX / innerWidth - 0.5) * 10;
+            const yPercent = (e.clientY / innerHeight - 0.5) * 10;
+            document.querySelector(".container").style.transform = `translate(${xPercent}px, ${yPercent}px)`;
+        });
+
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw.js').then(() => {
+                console.log("Service Worker Registered");
+            });
+        }
+    </script>
+</body>
+</html>
