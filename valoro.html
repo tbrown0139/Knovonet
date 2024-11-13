@@ -3,47 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Discover Valoro, the ultimate currency converter app designed for simplicity, accuracy, and privacy.">
-    <title>Valoro Currency Converter</title>
+    <meta name="description" content="Valoro - Your Ultimate Currency Converter. Discover seamless currency conversion with Valoro.">
+    <title>Valoro - Currency Converter</title>
     <style>
-        /* General Styling */
+        /* General Styles */
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f9f9f9;
             color: #333;
+            scroll-behavior: smooth;
         }
 
-        /* Header Section */
-        header {
+        /* Navigation Bar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        nav h1 {
+            font-size: 1.8em;
+            color: #007bff;
+            margin: 0;
+        }
+        nav a {
+            text-decoration: none;
+            color: #007bff;
+            font-size: 1em;
+            border: 2px solid #007bff;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: background 0.3s, color 0.3s;
+        }
+        nav a:hover {
+            background-color: #007bff;
+            color: white;
+        }
+
+        /* Hero Section */
+        .hero {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            background: linear-gradient(to bottom right, #007bff, #0056b3);
+            padding: 60px 40px;
+            background: linear-gradient(to bottom, #007bff, #0056b3);
             color: white;
-            padding: 40px;
-            height: auto;
-            position: relative;
-            overflow: hidden;
             flex-wrap: wrap;
         }
-        header .text {
-            flex: 1;
-            z-index: 2;
+        .hero .text {
             max-width: 50%;
+            z-index: 2;
         }
-        header h1 {
-            margin: 0;
-            font-size: 2.8em;
-            line-height: 1.2;
+        .hero h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
         }
-        header p {
+        .hero p {
             font-size: 1.2em;
-            margin: 20px 0;
+            margin-bottom: 30px;
             line-height: 1.6;
         }
-        header a {
+        .hero a {
             text-decoration: none;
             background: white;
             color: #007bff;
@@ -51,38 +78,49 @@
             font-size: 1.2em;
             border-radius: 5px;
             transition: background 0.3s, color 0.3s;
-            display: inline-block;
         }
-        header a:hover {
+        .hero a:hover {
             background: #0056b3;
             color: white;
         }
-        header img {
+        .hero img {
             max-width: 500px;
-            height: auto;
-            position: absolute;
-            right: -10%;
-            top: 50%;
-            transform: translateY(-50%) rotate(-15deg);
+            transform: rotate(-10deg);
             z-index: 1;
         }
 
-        /* Responsive Design for Header */
-        @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                text-align: center;
-                padding: 30px;
-            }
-            header .text {
-                max-width: 100%;
-            }
-            header img {
-                position: static;
-                margin-top: 20px;
-                transform: none;
-                max-width: 80%;
-            }
+        /* Features Section */
+        .features {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+        .feature {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+        .feature:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+        .feature img {
+            max-width: 400px;
+            margin: 0 20px;
+            transform: rotate(-5deg);
+        }
+        .feature .text {
+            max-width: 50%;
+        }
+        .feature h3 {
+            font-size: 2em;
+            color: #007bff;
+            margin-bottom: 15px;
+        }
+        .feature p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            color: #555;
         }
 
         /* Footer */
@@ -93,19 +131,69 @@
             font-size: 0.9em;
             color: #666;
         }
+        footer img {
+            width: 100px;
+            display: block;
+            margin: 10px auto;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+            .hero img {
+                margin-top: 20px;
+            }
+            .features .feature {
+                flex-direction: column;
+            }
+            .features .feature img {
+                margin-bottom: 20px;
+            }
+        }
     </style>
 </head>
 <body>
-    <header>
+    <nav>
+        <h1>Valoro</h1>
+        <a href="#">Get the App</a>
+    </nav>
+    <section class="hero">
         <div class="text">
-            <h1>Valoro: Your Ultimate Currency Companion</h1>
-            <p>Fast, secure, and accurate currency conversion at your fingertips. Designed for ease of use and privacy-first functionality.</p>
-            <a href="#">Download the App</a>
+            <h2>Valoro: Your Currency Companion</h2>
+            <p>Discover fast, accurate, and private currency conversion. Designed for simplicity and built for seamless performance.</p>
+            <a href="#">Download Now</a>
         </div>
-        <img src="https://knovon.net/043ca1c1f5f9ed82.png" alt="Valoro iPhone App">
-    </header>
+        <img src="https://knovon.net/043ca1c1f5f9ed82.png" alt="Valoro Hero Image">
+    </section>
+    <section class="features">
+        <div class="feature">
+            <img src="https://knovon.net/f5c0ca200fc589ea.png" alt="Feature 1">
+            <div class="text">
+                <h3>Accurate Conversions</h3>
+                <p>Valoro ensures the most up-to-date exchange rates for precise currency conversions, keeping you informed in real time.</p>
+            </div>
+        </div>
+        <div class="feature">
+            <img src="https://knovon.net/91ab784975a1c29e.png" alt="Feature 2">
+            <div class="text">
+                <h3>Offline Mode</h3>
+                <p>Even without an internet connection, Valoro provides seamless functionality so you're always prepared.</p>
+            </div>
+        </div>
+        <div class="feature">
+            <img src="https://knovon.net/f5c0ca200fc589ea.png" alt="Feature 3">
+            <div class="text">
+                <h3>Privacy First</h3>
+                <p>Valoro is ad-free and does not collect or share your personal data, ensuring your privacy and peace of mind.</p>
+            </div>
+        </div>
+    </section>
     <footer>
-        &copy; 2024 Valoro Currency Converter. All rights reserved.
+        <p>Powered by Knovon</p>
+        <img src="https://knovon.net/91ab784975a1c29e.png" alt="Knovon Logo">
     </footer>
 </body>
 </html>
