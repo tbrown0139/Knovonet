@@ -21,6 +21,9 @@
             padding: 20px 40px;
             background-color: white;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
         header h1 {
             margin: 0;
@@ -46,12 +49,11 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 60px 40px;
+            padding: 60px 20px;
             background: linear-gradient(to bottom, #007bff, #0056b3);
             color: white;
-            height: 80vh;
-            overflow: hidden;
-            position: relative;
+            height: auto;
+            flex-wrap: wrap;
         }
         .hero .text {
             max-width: 50%;
@@ -80,42 +82,41 @@
             color: white;
         }
         .hero img {
-            position: absolute;
-            right: -20%;
-            top: 20%;
-            max-width: 70%;
-            transform: rotate(-15deg);
-            z-index: 1;
+            max-width: 50%;
+            margin-left: 20px;
         }
 
-        /* Features Section */
-        .features {
+        /* Feature Section */
+        .feature-section {
             display: flex;
-            justify-content: space-around;
-            align-items: flex-start;
-            padding: 60px 20px;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            padding: 40px 20px;
             max-width: 1200px;
             margin: 0 auto;
-            gap: 20px;
         }
-        .feature {
-            text-align: center;
-            flex: 1;
-            padding: 10px 20px;
+        .feature-text {
+            max-width: 45%;
         }
-        .feature img {
-            max-width: 80px;
+        .feature-text h3 {
+            font-size: 2em;
             margin-bottom: 20px;
-        }
-        .feature h3 {
-            margin: 10px 0;
-            font-size: 1.5em;
             color: #007bff;
         }
-        .feature p {
+        .feature-text p {
             font-size: 1.1em;
-            line-height: 1.6;
             color: #555;
+            line-height: 1.6;
+        }
+        .feature-image {
+            max-width: 50%;
+            display: flex;
+            justify-content: center;
+        }
+        .feature-image img {
+            max-width: 100%;
+            transform: rotate(-5deg);
         }
 
         /* Footer */
@@ -126,6 +127,27 @@
             font-size: 0.9em;
             color: #666;
         }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+            .hero img {
+                margin: 20px 0;
+            }
+            .feature-section {
+                flex-direction: column;
+            }
+            .feature-text, .feature-image {
+                max-width: 100%;
+                text-align: center;
+            }
+            .feature-image img {
+                margin-top: 20px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -135,27 +157,19 @@
     </header>
     <section class="hero">
         <div class="text">
-            <h2>Convert Smarter, Live Better</h2>
-            <p>Valoro makes currency conversion fast, easy, and secure. Enjoy accurate rates, privacy-focused features, and offline access.</p>
+            <h2>Discover the Smarter Way to Convert</h2>
+            <p>Valoro provides accurate currency conversions with privacy-focused features and offline functionality.</p>
             <a href="#">Download Now</a>
         </div>
-        <img src="https://knovon.net/043ca1c1f5f9ed82.png" alt="Valoro App on iPhone">
+        <img src="https://knovon.net/043ca1c1f5f9ed82.png" alt="Valoro iPhone App">
     </section>
-    <section class="features">
-        <div class="feature">
-            <img src="https://knovon.net/91ab784975a1c29e.png" alt="Offline Mode">
-            <h3>Offline Mode</h3>
-            <p>Convert currencies anywhere, anytime—no internet required.</p>
+    <section class="feature-section">
+        <div class="feature-text">
+            <h3>Seamless Currency Conversions</h3>
+            <p>Experience the fastest and most accurate way to convert currencies. Designed with simplicity and ease of use in mind, Valoro is the perfect tool for travelers, business professionals, and anyone needing real-time currency data.</p>
         </div>
-        <div class="feature">
-            <img src="https://knovon.net/f5c0ca200fc589ea.png" alt="Up-to-Date Rates">
-            <h3>Up-to-Date Rates</h3>
-            <p>Sync with the latest rates for accurate conversions when connected.</p>
-        </div>
-        <div class="feature">
-            <img src="https://knovon.net/91ab784975a1c29e.png" alt="Privacy-Focused">
-            <h3>Privacy-Focused</h3>
-            <p>No ads, no tracking, no personal data collection—your privacy matters.</p>
+        <div class="feature-image">
+            <img src="https://knovon.net/f5c0ca200fc589ea.png" alt="Valoro iPhone App Tilted">
         </div>
     </section>
     <footer>
